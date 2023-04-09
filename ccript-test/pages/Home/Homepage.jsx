@@ -15,6 +15,7 @@ import WebDesign from '../../public/assets/Web-Design.jpg'
 import IdentityDesign from '../../public/assets/IdentityDesign.jpg'
 import LogoDesign from '../../public/assets/LogoDesign.jpg'
 import CoursesItem from './CousesItem';
+import library from '../../public/assets/library.jpg'
 const Main = () => {
     // const auth = getAuth();
     const [user, loading] = useAuthState(auth);
@@ -65,7 +66,7 @@ const Main = () => {
                     <div id='projects' className='w-full'>
                         <div className='max-w-[1240px] mx-auto px-2 py-16'>
                             <p className='text-xl tracking-widest uppercase text-[#5651e5]'>
-                            Courses
+                                Courses
                             </p>
                             <h2 className='py-4'>Courses We Offer</h2>
                             <div className='grid md:grid-cols-2 gap-8'>
@@ -149,6 +150,32 @@ const Main = () => {
                     </div>
                 </div>
 
+            </div>
+            <div id='home' className='w-full h-screen text-center bg-cover'>
+
+                <div className='max-w-[1240px] w-full h-full mx-auto p-2 flex justify-center items-center'>
+                    <div className='border-solid border-sky-500'>
+                        <h1 className='py-4 text-gray-700'>
+                            <span className='text-[#1e3d60]'> Courses taught by industry leaders around the world</span>
+                        </h1>
+
+                        <p className='py-4 text-gray-600 sm:max-w-[70%] m-auto'>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.
+                        </p>
+                        <div className='flex items-center justify-between flex-col max-w-[330px] m-auto py-4'>
+                            <button className='shadow-xl p-3 shadow-gray-400 rounded-xl uppercase bg-gradient-to-r from-[#1e3d60] to-[#709dff] text-white'>Explore Courses</button>
+                            <button className='shadow-xl p-3 px-7 m-5 shadow-gray-400 rounded-xl uppercase bg-[#e7eaee] text-black'>Learn More</button>
+                        </div>
+                    </div>
+                    <div>
+                        <Image
+                            src={library}
+                            alt='/'
+                            width='700'
+                            height='500'
+                            className='cursor-pointer rounded-lg' />
+                    </div>
+                </div>
             </div>
         </>
 
