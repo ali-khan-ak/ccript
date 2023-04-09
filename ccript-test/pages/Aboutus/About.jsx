@@ -1,9 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import React from 'react';
-import { AiOutlineMail } from 'react-icons/ai';
-import { BsFillPersonLinesFill } from 'react-icons/bs';
-import { FaGithub, FaLinkedinIn } from 'react-icons/fa';
 import NavLogo from '../.././public/assets/about_us-image.svg'
 import Aboutus from '../.././public/assets/aboutus-image1.jpg'
 import Learn from '../.././public/assets/learn-image.png'
