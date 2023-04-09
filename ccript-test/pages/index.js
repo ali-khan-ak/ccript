@@ -1,13 +1,8 @@
 import Head from 'next/head'
-import Navbar from '../components/Navbar'
-import Work from '../components/Work'
 import Login from '../components/Auth/Login'
-import Main from '../components/Main'
-// import Projects from '../components/Projects'
-// import Skills from '../components/Skills'
 import { initFirebase } from '../firebase/firebaseApp'
 import { getAuth, signInWithPopup, GoogleAuthProvider} from 'firebase/auth';
-
+import { AuthContextProvider } from '../context/AuthContext';
 
 export default function Home() {
   initFirebase();
@@ -25,7 +20,8 @@ export default function Home() {
         <meta name="description" content="I’m a front-end web developer specializing in building (and occasionally designing) exceptional digital experiences." />
         <link rel="icon" href="/fav.png" />
       </Head>
-      <Login title = {signIn}/>
+      
+      <Login/>
       {/* <Navbar/>
       <Main/>
       <Work /> */}

@@ -89,11 +89,8 @@ body{
   border-radius: 10px;
 }.login-fields> button{
   min-width: 46%;
-  /* background: #FBAE3C; */
-  /* border: #FBAE3C */
   padding: 3%;
   border-radius: 8px;
-  /* color: #002233; */
   font-weight: 900;
   font-size: 16px;
   font-family: Times New Roman;
