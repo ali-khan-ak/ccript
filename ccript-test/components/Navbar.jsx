@@ -6,12 +6,26 @@ import { FaGithub, FaLinkedinIn } from 'react-icons/fa';
 import { BsFillPersonLinesFill } from 'react-icons/bs';
 // import { useRouter } from 'next/router';
 import NavLogo from '../public/assets/Navlogo1.png'
+import {auth} from '../firebase/firebaseApp';
+import { useAuthState } from "react-firebase-hooks/auth";
+import { useRouter } from "next/router";
 
 const Navbar = () => {
   const [nav, setNav] = useState(false);
   const [shadow, setShadow] = useState(false);
   const [navBg, setNavBg] = useState('#ecf0f3');
   const [linkColor, setLinkColor] = useState('#1f2937');
+  const router = useRouter();
+  const [user, loading] = useAuthState(auth);
+
+  if (loading) {
+      return <div>Loading...</div>;
+    }
+  
+    if (!user) {
+      router.push("/");
+      return <div>Please sign in to continue</div>;
+    }
 
   const handleNav = () => {
     setNav(!nav);
@@ -66,7 +80,7 @@ const Navbar = () => {
             <li className='ml-10 text-sm uppercase hover:border-b'>
               <Link href='/resume'>Blog</Link>
             </li>
-            
+            <button onClick={()=> auth.signOut()} type="button" class="text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 shadow-lg shadow-blue-500/50 dark:shadow-lg dark:shadow-blue-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2 ">Signout</button>
           </ul>
           {/* Hamburger Icon */}
           <div
